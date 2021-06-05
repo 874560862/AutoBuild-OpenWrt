@@ -63,7 +63,7 @@ jobs:
       run: |
         git clone --depth 1 $REPO_URL -b $REPO_BRANCH openwrt
         cd openwrt
-        sed -i '$a \src-git weifuture https://github.com/hongweifuture/openwrt-packages\n\pwdep https://github.com/hongweifuture/pwdep.git\n'  ./feeds.conf.default
+        sed -i '$a \src-git weifuture https://github.com/hongweifuture/openwrt-packages\n\src-git pwdep https://github.com/hongweifuture/pwdep.git'  ./feeds.conf.default
         
     - name: Update & Install feeds
       working-directory: ./openwrt
